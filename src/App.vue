@@ -96,6 +96,113 @@
             </v-col>
           </v-row>
         </v-col>
+
+        <v-col cols="12">
+          <h1 class="white--text">Skills</h1>
+          <v-row no-gutters>
+            <v-col cols="6">
+              <div class="box">
+                <ul>
+                  <li>
+                    <div class="lang">Figma</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 90%;border-radius: 50px;"></div>
+                      <span class="percent">90%</span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="lang">Adobe XD</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 85%;border-radius: 50px;"></div>
+                      <span class="percent">85%</span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="lang">Adobe Photoshop</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 80%;border-radius: 50px;"></div>
+                      <span class="percent">80%</span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="lang">Adobe Illustrator</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 70%;border-radius: 50px;"></div>
+                      <span class="percent">70%</span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="lang">Adobe Premere Pro</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 50%;border-radius: 50px;"></div>
+                      <span class="percent">50%</span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="lang">Wondershare Filmora</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 50%;border-radius: 50px;"></div>
+                      <span class="percent">50%</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </v-col>
+
+            <v-col cols="6">
+              <div class="box">
+                <ul>
+                  <li>
+                    <div class="lang">UI/UX Design</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 85%;border-radius: 50px;"></div>
+                      <span class="percent">85%</span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="lang">Logo Design</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 70%;border-radius: 50px;"></div>
+                      <span class="percent">70%</span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="lang">Visual Design</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 80%;border-radius: 50px;"></div>
+                      <span class="percent">80%</span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="lang">MS Office</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 75%;border-radius: 50px;"></div>
+                      <span class="percent">75%</span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="lang">Supervision</div>
+                    <div class="bar" style="border-radius: 50px;">
+                      <div class="progress" style="background-color: #3b2dd7 !important; width: 60%;border-radius: 50px;"></div>
+                      <span class="percent">60%</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </v-col>
+
+          </v-row>
+        </v-col>
+
       </v-row>
     </v-main>
   </v-app>
@@ -112,6 +219,20 @@ export default {
 data()  {
     return {
       view: {topOfPage: true},
+
+      skills:[
+        { lang:"Figma",      	percent:90,   color:"#ec407a"	},
+        { lang:"Adobe XD", 			percent:76,   color:"#f4511e"	},
+        { lang:"Adobe Photoshop", 	percent:84,   color:"#512da8"	},
+        { lang:"Adboe Illustrator",	percent:94,   color:"#f57c00"	},
+        { lang:"Adobe Premere Pro",		 	percent:93,   color:"#0288d1"	},
+        { lang:"Wondershare Filmora", 		percent:87,   color:"#388e3c"	},
+        { lang:"UI/UX Design", 		percent:87,   color:"#388e3c"	},
+        { lang:"Logo Design", 		percent:87,   color:"#388e3c"	},
+        { lang:"Visual Design", 		percent:87,   color:"#388e3c"	},
+        { lang:"MS Office", 		percent:87,   color:"#388e3c"	},
+        { lang:"Supervision", 		percent:87,   color:"#388e3c"	}
+      ]
 
     }
 },
@@ -339,6 +460,45 @@ background-color: #BDE0FE !important;
 
 .bg--personal {
   background-color: #001219 !important;
+}
+
+// skills
+.box{
+  width: 800px;
+  padding: 40px 0;
+  //background:#f3f3f3;
+  //box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+ul li{
+  list-style-type: none;
+  padding:5px;
+  margin: 20px 0;
+}
+
+.lang{
+  margin:5px;
+  font-size: 20px;
+  color: #fff !important;
+}
+
+.bar{
+  width: 100%;
+  background:#dfdfdf;
+  overflow: hidden;
+  padding:2px;
+}
+
+.progress{
+  float:left;
+  padding:15px;
+}
+
+.percent{
+  float: right;
+  font-weight: 600;
+  height: 30px;
+  line-height: 30px;
 }
 </style>
 
