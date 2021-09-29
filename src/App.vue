@@ -100,7 +100,7 @@
         <v-col cols="12">
           <h1 class="white--text">Skills</h1>
           <v-row no-gutters>
-            <v-col cols="6">
+            <v-col cols="5">
               <div class="box">
                 <ul>
                   <li>
@@ -153,8 +153,8 @@
                 </ul>
               </div>
             </v-col>
-
-            <v-col cols="6">
+            <v-col cols="2"></v-col>
+            <v-col cols="5">
               <div class="box">
                 <ul>
                   <li>
@@ -464,7 +464,7 @@ background-color: #BDE0FE !important;
 
 // skills
 .box{
-  width: 800px;
+  //width: 800px;
   padding: 40px 0;
   //background:#f3f3f3;
   //box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.1);
