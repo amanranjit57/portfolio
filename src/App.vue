@@ -330,7 +330,7 @@ data()  {
 
 
 .main {
-  background: linear-gradient(-45deg, #ff75c3, #ffa647, #ffe83f, #9fff5b, #70e2ff, #cd93ff, #4ac7fa, #ff75c3 );
+  background: linear-gradient(-45deg, #ff75c3, #ffa647, #ffe83f, #70e2ff, #cd93ff, #4ac7fa, #ff75c3 );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
