@@ -35,7 +35,7 @@
           <div class="white--text" style="font-size: 40px;">HI, I'm <span class="px-3" style="font-size: 70px; font-weight: 700;">AMAN RANJIT</span></div>
           <v-row no-gutters>
             <v-col cols="12" class="justify-center white--text py-10">
-              <div class="justify-md-center font-weight-regular" style="font-size: 25px; text-align: justify !important; text-justify: inter-word !important;">Full time UI/UX Designer with wide variation in design technique. Young and energetic, ready to learn and hunger for design. I’m an amateur designer with on field experience of 1.5 years and counting, versatile in UI/ UX along with some graphics design knowledge.</div>
+              <div class="justify-md-center font-weight-regular" style="font-size: 25px; text-align: justify !important; text-justify: inter-word !important;">Full time UI/UX Designer with wide variation in design technique. Young and energetic, ready to learn and hunger for design. I’m an intermediate designer with on field experience of 1.5 years and counting, versatile in UI/ UX along with some graphics design knowledge.</div>
             </v-col>
           </v-row>
 
@@ -330,7 +330,7 @@ data()  {
 
 
 .main {
-  background: linear-gradient(-45deg, #ff75c3, #ffa647, #ffe83f, #70e2ff, #cd93ff, #4ac7fa, #ff75c3 );
+  background: linear-gradient(-60deg, #ff75c3, #ffa647, #70e2ff, #cd93ff, #4ac7fa, #5753c9, #2980b9, #96e6a1, #d93221 );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
