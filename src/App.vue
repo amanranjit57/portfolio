@@ -30,7 +30,7 @@
     </v-app-bar>
     <v-main class="main px-14 pt-16" style="height: 500vh;">
       <v-row no-gutters class="my-15 pt-5">
-        <span class="gradient radial-gradient-default" style="top: 100px; position: marker;"></span>
+<!--        <span class="gradient radial-gradient-default" style="top: 100px; position: marker;"></span>-->
         <v-col cols="6" style="margin-top: 100px;">
           <div class="white--text" style="font-size: 40px;">HI, I'm <span class="px-3" style="font-size: 70px; font-weight: 700;">AMAN RANJIT</span></div>
           <v-row no-gutters>
@@ -55,8 +55,8 @@
             </v-col>
           </v-row>
         </v-col>
-        <span style="top: 100px; right: 30px;" class="gradient1 radial-gradient-default1"></span>
-        <span style="top: 800px; left: 300px;" class="gradient2 radial-gradient-default2"></span>
+<!--        <span style="top: 100px; right: 30px;" class="gradient1 radial-gradient-default1"></span>-->
+<!--        <span style="top: 800px; left: 300px;" class="gradient2 radial-gradient-default2"></span>-->
 
         <v-col cols="12" class="text-center my-16">
           <div class="white--text">Scroll Down <v-img  height="20" width="20" src="@/assets/mouse.png" class="mx-auto"></v-img></div>
@@ -67,15 +67,15 @@
         <v-col cols="6" class="justify-center">
           <h1 class="white--text my-10">About Me</h1>
           <div class="white--text justify-center" style="font-size: 25px;text-align: justify !important; text-justify: inter-word !important;">Talented UI UX Designer & Technical Lead adept at integrating resources into business operations and devel- oping innovative solutions to diverse issues. Strong history of managing highly effective teams to execute complex projects within stringment timeframes. Highly-skilled Graphics head well-versed in setting up hardware and software components for all users. Weighs curcial business and IT needs against computer system and procedural limitations, assessing roadmaps for optimal functions.</div>
-        <v-row no-gutters>
-          <v-col cols="12" class="text-center my-5">
+        <v-row no-gutters class="mt-5">
+          <v-col cols="12" class="text-center my-16">
             <v-btn large rounded class="font-weight-bold black--text talk--btn"  style="width: 250px">
               <v-icon>mdi-download</v-icon>Download CV</v-btn>
           </v-col>
         </v-row>
         </v-col>
 
-        <v-col cols="6" class="mx-auto py-5">
+        <v-col cols="6" class="mx-auto my-auto">
           <v-img style="border-radius: 10px;" class="mx-auto" height="400" width="400" src="@/assets/aman.jpg"></v-img>
         </v-col>
 
