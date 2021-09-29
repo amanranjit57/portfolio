@@ -529,7 +529,8 @@ background-color: #BDE0FE !important;
 }
 
 .bg--personal {
-  background-color: #001219 !important;
+  background: linear-gradient(-90deg, #b2fefa, #0de2f7 );
+  animation: gradient 15s ease infinite;
 }
 
 // skills
