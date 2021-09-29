@@ -1,4 +1,4 @@
-A<template>
+<template>
   <v-app>
     <v-app-bar
         class="sticky px-10"
@@ -30,11 +30,12 @@ A<template>
     </v-app-bar>
     <v-main class="main px-14 pt-16" style="height: 500vh;">
       <v-row no-gutters class="my-15 pt-5">
+        <span class="gradient radial-gradient-default" style="top: 100px; position: marker;"></span>
         <v-col cols="6" style="margin-top: 100px;">
           <div class="white--text" style="font-size: 40px;">HI, I'm <span class="px-3" style="font-size: 70px; font-weight: 700;">AMAN RANJIT</span></div>
           <v-row no-gutters>
             <v-col cols="12" class="justify-center white--text py-10">
-              <div class="justify-md-center font-weight-regular" style="font-size: 25px;">Full time UI/UX Designer with wide variation in design technique. Young and energetic, ready to learn and hunger for design. I’m an amateur designer with on field experience of 1.5 years and counting, versatile in UI/ UX along with some graphics design knowledge.</div>
+              <div class="justify-md-center font-weight-regular" style="font-size: 25px; text-align: justify !important; text-justify: inter-word !important;">Full time UI/UX Designer with wide variation in design technique. Young and energetic, ready to learn and hunger for design. I’m an amateur designer with on field experience of 1.5 years and counting, versatile in UI/ UX along with some graphics design knowledge.</div>
             </v-col>
           </v-row>
 
@@ -54,7 +55,8 @@ A<template>
             </v-col>
           </v-row>
         </v-col>
-
+        <span style="top: 100px; right: 30px;" class="gradient1 radial-gradient-default1"></span>
+        <span style="top: 800px; left: 300px;" class="gradient2 radial-gradient-default2"></span>
 
         <v-col cols="12" class="text-center my-16">
           <div class="white--text">Scroll Down <v-img  height="20" width="20" src="@/assets/mouse.png" class="mx-auto"></v-img></div>
@@ -64,7 +66,7 @@ A<template>
       <v-row no-gutters class="py-5">
         <v-col cols="6" class="justify-center">
           <h1 class="white--text my-10">About Me</h1>
-          <div class="white--text justify-center" style="font-size: 25px;">Talented UI UX Designer & Technical Lead adept at integrating resources into business operations and devel- oping innovative solutions to diverse issues. Strong history of managing highly effective teams to execute complex projects within stringment timeframes. Highly-skilled Graphics head well-versed in setting up hardware and software components for all users. Weighs curcial business and IT needs against computer system and procedural limitations, assessing roadmaps for optimal functions.</div>
+          <div class="white--text justify-center" style="font-size: 25px;text-align: justify !important; text-justify: inter-word !important;">Talented UI UX Designer & Technical Lead adept at integrating resources into business operations and devel- oping innovative solutions to diverse issues. Strong history of managing highly effective teams to execute complex projects within stringment timeframes. Highly-skilled Graphics head well-versed in setting up hardware and software components for all users. Weighs curcial business and IT needs against computer system and procedural limitations, assessing roadmaps for optimal functions.</div>
         <v-row no-gutters>
           <v-col cols="12" class="text-center my-5">
             <v-btn large rounded class="font-weight-bold black--text talk--btn"  style="width: 250px">
@@ -201,6 +203,43 @@ A<template>
           </v-row>
         </v-col>
 
+        <v-col cols="12" class="my-10">
+          <h1 class="white--text my-5">Portfolio</h1>
+          <v-carousel  hide-delimiters hide-delimiter-background  touch>
+            <template v-for="(item, index) in slider">
+              <v-carousel-item v-if="(index + 1) % columns === 1 || columns === 1"
+                               :key="index"
+              >
+                <v-row class="flex-nowrap portfolio--cara" style="height:100%; border-radius: 100px; !important;" >
+                  <template v-for="(n,i) in columns">
+                    <template v-if="(+index + i) < slider.length">
+                      <v-col :key="i">
+                        <v-sheet v-if="(+index + i) < slider.length"
+                                 :color="slider[+index + i]"
+                                 height="100%"
+                        >
+                          <v-row class="fill-height"
+                                 align="center"
+                                 justify="center"
+                          >
+                            <div class="display-3">{{+index + i + 1}}</div>
+                          </v-row>
+                        </v-sheet>
+                      </v-col>
+                    </template>
+                  </template>
+                </v-row>
+              </v-carousel-item>
+            </template>
+          </v-carousel>
+
+          <v-row no-gutters class="my-5 ">
+            <v-col cols="12" class="white--text justify-center" style="font-size: 25px; text-align: justify !important; text-justify: inter-word !important;">
+              Since 2019, I’ve started designing UI and learnt many methods and techniques. I have gained knowledge from various source, watched hours of youtube tutorials, reddit forums, instagarm design pages, read their strategy and thinking ways and applied to my design. I look forward to upgrade myself in this field, learn more from the experts, and share my knowledge among my teams and work accordingly so that i will be able to deliver 100% and make my clients, colleagues and myself happy and proud.
+            </v-col>
+          </v-row>
+        </v-col>
+
       </v-row>
     </v-main>
   </v-app>
@@ -230,10 +269,43 @@ data()  {
         { lang:"Visual Design", 		percent:87,   color:"#388e3c"	},
         { lang:"MS Office", 		percent:87,   color:"#388e3c"	},
         { lang:"Supervision", 		percent:87,   color:"#388e3c"	}
+      ],
+
+      slider: [
+        "red",
+        "green",
+        "orange",
+        "blue",
+        "pink",
+        "purple",
+        "indigo",
+        "cyan",
+        "deep-purple",
+        "light-green",
+        "deep-orange",
+        "blue-grey"
       ]
 
     }
 },
+
+  computed: {
+    columns() {
+      if (this.$vuetify.breakpoint.xl) {
+        return 4;
+      }
+
+      if (this.$vuetify.breakpoint.lg) {
+        return 3;
+      }
+
+      if (this.$vuetify.breakpoint.md) {
+        return 2;
+      }
+
+      return 1;
+    }
+  },
 
   beforeMount() {
     window.addEventListener('scroll', this.handleScroll)
@@ -497,6 +569,10 @@ ul li{
   font-weight: 600;
   height: 30px;
   line-height: 30px;
+}
+
+.portfolio--cara {
+  border-radius: 100px !important;
 }
 </style>
 
