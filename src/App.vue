@@ -1,4 +1,4 @@
-<template>
+A<template>
   <v-app>
     <v-app-bar
         class="sticky px-10"
@@ -65,7 +65,7 @@
 
       <v-row no-gutters class="py-5">
         <v-col cols="6" class="justify-center">
-          <h1 class="white--text my-10">Aboput Me</h1>
+          <h1 class="white--text my-10">About Me</h1>
           <div class="white--text justify-center" style="font-size: 25px;">Talented UI UX Designer & Technical Lead adept at integrating resources into business operations and devel- oping innovative solutions to diverse issues. Strong history of managing highly effective teams to execute complex projects within stringment timeframes. Highly-skilled Graphics head well-versed in setting up hardware and software components for all users. Weighs curcial business and IT needs against computer system and procedural limitations, assessing roadmaps for optimal functions.</div>
         <v-row no-gutters>
           <v-col cols="12" class="text-center my-5">
