@@ -15,19 +15,19 @@
     <v-spacer></v-spacer>
 
       <v-toolbar-items class="mx-10">
-        <a href="#about" style="text-decoration: none" class="white--text ma-auto">About Me</a>
+        <a href="#about" style="text-decoration: none" class="white--text nav--link ma-auto">About Me</a>
       </v-toolbar-items>
 
       <v-toolbar-items class="mx-10">
-        <a href="#skills" style="text-decoration: none" class="white--text ma-auto">Skills</a>
+        <a href="#skills" style="text-decoration: none" class="white--text nav--link ma-auto">Skills</a>
       </v-toolbar-items>
 
       <v-toolbar-items class="mx-10">
-       <a href="#portfolio" style="text-decoration: none" class="white--text ma-auto">Portfolio</a>
+       <a href="#portfolio" style="text-decoration: none" class="white--text nav--link ma-auto">Portfolio</a>
       </v-toolbar-items>
 
       <v-toolbar-items class="mx-10">
-        <a href="#contact" style="text-decoration: none" class="white--text ma-auto">Contact</a>
+        <a href="#contact" style="text-decoration: none" class="white--text nav--link ma-auto">Contact</a>
       </v-toolbar-items>
 
     </v-app-bar>
@@ -602,6 +602,53 @@ ul li{
 .portfolio--cara {
   border-radius: 100px !important;
 }
+
+.nav--link {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  display: block;
+  width: 100%;
+  padding: 1px;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  color: #2C3E50;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.nav--link:after {
+  content: "";
+  height: 2px;
+  left: 0;
+  width: 1px;
+  position: absolute;
+  -webkit-transition: width 1s ease, background-color 1s ease;
+  -moz-transition: width 1s ease, background-color 1s ease;;
+  -ms-transition: width 1s ease, background-color 1s ease;;
+  -o-transition: width 1s ease, background-color 1s ease;;
+  transition: width 1s ease, background-color 1s ease;;
+  right: 0;
+  margin: 0 auto;
+}
+
+.nav--link:hover {
+  -webkit-transition: color 1s ease;
+  -moz-transition: color 1s ease;
+  -ms-transition: color 1s ease;
+  -o-transition: color 1s ease;
+  transition: color 1s ease;
+  cursor: pointer;
+}
+
+.nav--link:hover:after,
+.nav--link:focus:after{
+  width: 100%;
+  background-color: #fff;
+}
+
 
 // footer section
 .footer {
