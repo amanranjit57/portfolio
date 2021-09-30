@@ -28,7 +28,7 @@
       </v-toolbar-items>
 
     </v-app-bar>
-    <v-main class="main px-14 pt-16" style="height: 500vh;">
+    <v-main class="main px-14 pt-16 pb-16">
       <v-row no-gutters class="my-15 pt-5">
 <!--        <span class="gradient radial-gradient-default" style="top: 100px; position: marker;"></span>-->
         <v-col cols="6" style="margin-top: 100px;">
@@ -333,7 +333,6 @@ data()  {
   background: linear-gradient(-60deg, #ff75c3, #ffa647, #70e2ff, #cd93ff, #4ac7fa, #5753c9, #2980b9, #96e6a1, #d93221 );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  height: 100vh;
 }
 
 @keyframes gradient {
@@ -528,10 +527,37 @@ background-color: #BDE0FE !important;
   transition: 1s !important;
 }
 
-.bg--personal {
-  background: linear-gradient(-90deg, #b2fefa, #0de2f7 );
-  animation: gradient 15s ease infinite;
+//.bg--personal {
+//  background: linear-gradient(-90deg, #b2fefa, #0de2f7 ) !important;
+//  animation: gradient 15s ease infinite !important;
+//}
+
+.bg--personal{
+  position: relative !important;
+  //top: calc(50% - 175px) !important;
+  //left: calc(50% - 125px) !important;
+  background: rgb(0, 11, 14, .50) !important;
+  border-radius: 2px !important;
+  overflow: hidden !important;
+  z-index: 10 !important;
+  //box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05) !important;
+  //filter: blur(20px) !important;
+
 }
+
+//.bg--personal:after{
+//  content: '' !important;
+//  //background: inherit !important;
+//  position: absolute !important;
+//  left: -25px !important;
+//  //left position
+//  right: 0 !important;
+//  top: -25px !important;
+//  //top position
+//  bottom: 0 !important;
+//  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05) !important;
+//  filter: blur(20px) !important;
+//}
 
 // skills
 .box{
