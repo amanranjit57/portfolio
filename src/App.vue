@@ -241,7 +241,55 @@
         </v-col>
 
       </v-row>
+
+
     </v-main>
+    <v-row no-gutters class="footer pa-5 px-13">
+      <v-col cols="6">
+        <h2>Let's Work Together</h2>
+
+        <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+
+        <v-row no-gutters class="my-5">
+          <v-col cols="8" >
+            <v-form>
+              <v-text-field solo placeholder="Enter Full Name"></v-text-field>
+
+              <v-text-field solo placeholder="Email Address"></v-text-field>
+
+              <v-text-field solo placeholder="Contact No."></v-text-field>
+            </v-form>
+
+            <v-row no-gutters>
+              <v-col cols="6" class="text-center mx-auto">
+                <v-btn block rounded color="primary">Submit</v-btn>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-col>
+
+      <v-col cols="2"></v-col>
+      <v-col cols="4">
+        <v-img src="@/assets/footer.png"></v-img>
+        <v-row no-gutters>
+          <v-col cols="12" class="my-10">
+            <v-btn class="mx-3" icon><v-icon size="40">mdi-facebook</v-icon></v-btn>
+            <v-btn class="mx-3" icon><v-icon size="40">mdi-instagram</v-icon></v-btn>
+            <v-btn class="mx-3" icon><v-icon size="40">mdi-linkedin</v-icon></v-btn>
+            <v-btn class="mx-3" icon><v-icon size="40">mdi-twitter</v-icon></v-btn>
+            <v-btn class="mx-3" icon><v-icon size="40">mdi-youtube</v-icon></v-btn>
+          </v-col>
+
+
+        </v-row>
+
+      </v-col>
+      <v-divider style="border: 1px solid rgba(0,0,0,0.27)"></v-divider>
+      <v-col cols="12" class="text-center pt-3">
+        Designed By <a style="text-decoration: none" href="https://amanranjit.com.np/">Aman Ranjit</a> and Developed by <a style="text-decoration: none" href="https://umesthapa.com.np/">Umesh Thapa</a>
+      </v-col>
+    </v-row>
   </v-app>
 </template>
 
@@ -447,74 +495,6 @@ data()  {
 //  //background-color: #001219 !important;
 //}
 
-
-
-a
-{
-  position: absolute;
-  //top: 50%;
-  //left: 50%;
-  transform: translate(-50%, -50%);
-  width: 180px;
-  height: 50px;
-  background: rgba(255, 199, 169, 0.28);
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 50px;
-  color: #000;
-  font-size: 20px;
-  font-family: verdana;
-  letter-spacing: 4px;
-  border-radius: 25px;
-  /*    border-radius: 20px; */
-}
-
-a:before,
-a:after,
-span:before,
-span:after
-{
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  transition: 1s;
-  mix-blend-mode: hue;
-  border-radius: 10px;
-}
-
-a:before
-{
-  top: -2px;
-  left: -2px
-}
-a:after
-{
-  top: -2px;
-  right: -2px;
-}
-span:before
-{
-  bottom: -2px;
-  left: -2px
-}
-span:after
-{
-  bottom: -2px;
-  right: -2px
-}
-
-a:hover:before,
-a:hover:after,
-a:hover span:before,
-a:hover span:after
-{
-  width: calc( 180px/2 );
-  height: calc( 50px/2 )
-}
-
 .talk--btn {
 background-color: #BDE0FE !important;
   transition: 1s !important;
@@ -600,6 +580,11 @@ ul li{
 
 .portfolio--cara {
   border-radius: 100px !important;
+}
+
+// footer section
+.footer {
+  background-image: linear-gradient(to bottom right, darken(powderblue, 20%), powderblue);
 }
 </style>
 
