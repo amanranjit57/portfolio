@@ -14,6 +14,10 @@
       </div>
     <v-spacer></v-spacer>
 
+<!--      <v-toolbar-items class="mx-10">-->
+<!--        <v-btn x-small @click="toggleTheme()">Toggle light</v-btn>-->
+<!--      </v-toolbar-items>-->
+
       <v-toolbar-items class="mx-10">
         <a href="#about" style="text-decoration: none" class="white--text nav--link ma-auto">About Me</a>
       </v-toolbar-items>
@@ -279,7 +283,7 @@
                 </div>
 
                 <div class="flex-rev">
-                  <textarea placeholder="I have an idea for a project...." name="message" id="message" />
+                  <textarea cols="2" placeholder="I have an idea for a project...." name="message" id="message" />
                 </div>
                   <button style="background-color: #3b2dd7; color: white; padding:10px 20px; border-radius: 8px" type="submit">Submit</button>
               </form>
@@ -383,6 +387,9 @@ data()  {
     window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
+    toggleTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    },
     handleScroll(){
       if(window.pageYOffset>0){
         if(this.view.topOfPage) this.view.topOfPage = false
@@ -683,12 +690,6 @@ ul li{
   outline-width: thin;
   -webkit-appearance: none;
 }
-.flex-rev textarea{
-  height: 150px;
-}
-
-
-
 
 </style>
 
