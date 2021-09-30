@@ -1,5 +1,6 @@
 <template>
-  <v-app>
+  <v-app style="scroll-behavior: smooth !important;">
+<!--  Top Navigation Bar  -->
     <v-app-bar
         class="sticky px-10"
         :class="{ 'bg--personal': !view.topOfPage}"
@@ -7,28 +8,34 @@
         style="background: inherit; position: fixed !important; z-index:5 !important;"
     >
       <div class="d-flex align-center white--text">
+        <a href="#top">
         <v-img height="80" width="80" src="@/assets/ar.png"></v-img>
+        </a>
       </div>
     <v-spacer></v-spacer>
 
       <v-toolbar-items class="mx-10">
-        <v-btn tile elevation="0" text class="white--text navigation-text">About Me</v-btn>
+        <a href="#about" style="text-decoration: none" class="white--text ma-auto">About Me</a>
       </v-toolbar-items>
 
       <v-toolbar-items class="mx-10">
-        <v-btn text class="white--text">Skills</v-btn>
+        <a href="#skills" style="text-decoration: none" class="white--text ma-auto">Skills</a>
       </v-toolbar-items>
 
       <v-toolbar-items class="mx-10">
-        <v-btn text class="white--text">Portfolio</v-btn>
+       <a href="#portfolio" style="text-decoration: none" class="white--text ma-auto">Portfolio</a>
       </v-toolbar-items>
 
       <v-toolbar-items class="mx-10">
-        <v-btn text class="white--text">Contact</v-btn>
+        <a href="#contact" style="text-decoration: none" class="white--text ma-auto">Contact</a>
       </v-toolbar-items>
 
     </v-app-bar>
-    <v-main class="main px-14 pt-16 pb-16">
+<!--  End Top Naigation Bar  -->
+
+    <v-main id="top" class="main px-14 pt-16 pb-16" style="scroll-behavior: smooth !important;">
+
+<!--   Landing View   -->
       <v-row no-gutters class="my-15 pt-5">
 <!--        <span class="gradient radial-gradient-default" style="top: 100px; position: marker;"></span>-->
         <v-col cols="6" style="margin-top: 100px;">
@@ -62,23 +69,24 @@
           <div class="white--text">Scroll Down <v-img  height="20" width="20" src="@/assets/mouse.png" class="mx-auto"></v-img></div>
         </v-col>
       </v-row>
+<!--   End landing View   -->
 
-      <v-row no-gutters class="py-5">
+<!--   About Me   -->
+      <v-row id="about" no-gutters class="py-5">
         <v-col cols="6" class="justify-center">
-          <h1 class="white--text my-10">About Me</h1>
+          <h1  class="white--text my-10">About Me</h1>
           <div class="white--text justify-center" style="font-size: 25px;text-align: justify !important; text-justify: inter-word !important;">Talented UI UX Designer & Technical Lead adept at integrating resources into business operations and devel- oping innovative solutions to diverse issues. Strong history of managing highly effective teams to execute complex projects within stringment timeframes. Highly-skilled Graphics head well-versed in setting up hardware and software components for all users. Weighs curcial business and IT needs against computer system and procedural limitations, assessing roadmaps for optimal functions.</div>
-        <v-row no-gutters class="mt-5">
-          <v-col cols="12" class="text-center my-16">
-            <v-btn large rounded class="font-weight-bold black--text talk--btn"  style="width: 250px">
-              <v-icon>mdi-download</v-icon>Download CV</v-btn>
-          </v-col>
-        </v-row>
+          <v-row no-gutters class="mt-5">
+            <v-col cols="12" class="text-center my-16">
+              <v-btn large rounded class="font-weight-bold black--text talk--btn"  style="width: 250px">
+                <v-icon>mdi-download</v-icon>Download CV</v-btn>
+            </v-col>
+          </v-row>
         </v-col>
 
         <v-col cols="6" class="mx-auto my-auto">
           <v-img style="border-radius: 10px;" class="mx-auto" height="400" width="400" src="@/assets/aman.jpg"></v-img>
         </v-col>
-
 
         <v-col cols="12" class="my-16">
           <v-row no-gutters class="py-10">
@@ -96,8 +104,14 @@
             </v-col>
           </v-row>
         </v-col>
+      </v-row>
+<!--End About me-->
 
-        <v-col cols="12">
+
+      <v-row no-gutters class="py-5">
+
+<!--   Skills     -->
+        <v-col id="skills" cols="12">
           <h1 class="white--text">Skills</h1>
           <v-row no-gutters>
             <v-col cols="5">
@@ -202,8 +216,10 @@
 
           </v-row>
         </v-col>
+<!--    End Skills    -->
 
-        <v-col cols="12" class="my-10">
+<!--   Portfolio     -->
+        <v-col id="portfolio" cols="12" class="my-10">
           <h1 class="white--text my-5">Portfolio</h1>
           <v-carousel  hide-delimiters hide-delimiter-background  touch>
             <template v-for="(item, index) in slider">
@@ -239,12 +255,13 @@
             </v-col>
           </v-row>
         </v-col>
-
+<!-- End Portfolio -->
       </v-row>
 
 
     </v-main>
-    <v-row no-gutters class="footer pa-5 px-13">
+<!--  Footer  -->
+    <v-row no-gutters id="contact" class="footer pa-5 px-13">
       <v-col cols="6">
         <h2>Let's Work Together</h2>
 
@@ -290,6 +307,7 @@
         Designed By <a style="text-decoration: none" href="https://amanranjit.com.np/">Aman Ranjit</a> and Developed by <a style="text-decoration: none" href="https://umesthapa.com.np/">Umesh Thapa</a>
       </v-col>
     </v-row>
+<!--  End Footer  -->
   </v-app>
 </template>
 
@@ -373,9 +391,12 @@ data()  {
 <style scoped lang="scss">
 *{
   font-family: "Nunito", sans-serif;
+  scroll-behavior: smooth !important;
 }
 
-
+html {
+  scroll-behavior: smooth !important;
+}
 
 .main {
   background: linear-gradient(-60deg, #ff75c3, #ffa647, #70e2ff, #cd93ff, #4ac7fa, #5753c9, #2980b9, #96e6a1, #d93221 );
