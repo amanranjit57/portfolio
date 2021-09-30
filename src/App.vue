@@ -72,7 +72,7 @@
 <!--   End landing View   -->
 
 <!--   About Me   -->
-      <v-row id="about" no-gutters class="py-5">
+      <v-row id="about" no-gutters class="py-10">
         <v-col cols="6" class="justify-center">
           <h1  class="white--text my-10">About Me</h1>
           <div class="white--text justify-center" style="font-size: 25px;text-align: justify !important; text-justify: inter-word !important;">Talented UI UX Designer & Technical Lead adept at integrating resources into business operations and devel- oping innovative solutions to diverse issues. Strong history of managing highly effective teams to execute complex projects within stringment timeframes. Highly-skilled Graphics head well-versed in setting up hardware and software components for all users. Weighs curcial business and IT needs against computer system and procedural limitations, assessing roadmaps for optimal functions.</div>
@@ -111,7 +111,7 @@
       <v-row no-gutters class="py-5">
 
 <!--   Skills     -->
-        <v-col id="skills" cols="12">
+        <v-col id="skills" cols="12" class="py-16 mt-4">
           <h1 class="white--text">Skills</h1>
           <v-row no-gutters>
             <v-col cols="5">
@@ -219,9 +219,9 @@
 <!--    End Skills    -->
 
 <!--   Portfolio     -->
-        <v-col id="portfolio" cols="12" class="my-10">
+        <v-col id="portfolio" cols="12" class="my-10 pt-16">
           <h1 class="white--text my-5">Portfolio</h1>
-          <v-carousel  hide-delimiters hide-delimiter-background  touch>
+          <v-carousel  hide-delimiters hide-delimiter-background>
             <template v-for="(item, index) in slider">
               <v-carousel-item v-if="(index + 1) % columns === 1 || columns === 1"
                                :key="index"
@@ -269,18 +269,22 @@
 
         <v-row no-gutters class="my-5">
           <v-col cols="8" >
-            <v-form>
-              <v-text-field solo placeholder="Enter Full Name"></v-text-field>
+            <div class="form">
+              <form ref="form" @submit.prevent="submitForm()">
+                <div class="flex-rev">
+                  <input type="text" placeholder="Enter Full Name" name="name" id="name" />
+                </div>
+                <div class="flex-rev">
+                  <input type="email" placeholder="example@gmail.com" name="email" id="email" />
+                </div>
 
-              <v-text-field solo placeholder="Email Address"></v-text-field>
-
-              <v-text-field solo placeholder="Contact No."></v-text-field>
-            </v-form>
-
+                <div class="flex-rev">
+                  <textarea placeholder="I have an idea for a project...." name="message" id="message" />
+                </div>
+                <input type="submit" value="Submit">
+              </form>
+            </div>
             <v-row no-gutters>
-              <v-col cols="6" class="text-center mx-auto">
-                <v-btn block rounded color="primary">Submit</v-btn>
-              </v-col>
             </v-row>
           </v-col>
         </v-row>
@@ -304,7 +308,7 @@
       </v-col>
       <v-divider style="border: 1px solid rgba(0,0,0,0.27)"></v-divider>
       <v-col cols="12" class="text-center pt-3">
-        Designed By <a style="text-decoration: none" href="https://amanranjit.com.np/">Aman Ranjit</a> and Developed by <a style="text-decoration: none" href="https://umesthapa.com.np/">Umesh Thapa</a>
+        Designed By <a style="text-decoration: none" href="https://amanranjit.com.np/">Aman Ranjit</a>, Developed by <a style="text-decoration: none" href="https://umesthapa.com.np/">Umesh Thapa</a>
       </v-col>
     </v-row>
 <!--  End Footer  -->
@@ -312,6 +316,7 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
 
 export default {
   name: 'App',
@@ -322,20 +327,6 @@ export default {
 data()  {
     return {
       view: {topOfPage: true},
-
-      skills:[
-        { lang:"Figma",      	percent:90,   color:"#ec407a"	},
-        { lang:"Adobe XD", 			percent:76,   color:"#f4511e"	},
-        { lang:"Adobe Photoshop", 	percent:84,   color:"#512da8"	},
-        { lang:"Adboe Illustrator",	percent:94,   color:"#f57c00"	},
-        { lang:"Adobe Premere Pro",		 	percent:93,   color:"#0288d1"	},
-        { lang:"Wondershare Filmora", 		percent:87,   color:"#388e3c"	},
-        { lang:"UI/UX Design", 		percent:87,   color:"#388e3c"	},
-        { lang:"Logo Design", 		percent:87,   color:"#388e3c"	},
-        { lang:"Visual Design", 		percent:87,   color:"#388e3c"	},
-        { lang:"MS Office", 		percent:87,   color:"#388e3c"	},
-        { lang:"Supervision", 		percent:87,   color:"#388e3c"	}
-      ],
 
       slider: [
         "red",
@@ -350,7 +341,22 @@ data()  {
         "light-green",
         "deep-orange",
         "blue-grey"
-      ]
+      ],
+
+      name:'',
+      nameRules:[
+        v => !!v || 'This Field is required.'
+      ],
+      email: '',
+      emailRules:[
+        v => !!v || 'This Field is required.'
+      ],
+      message: '',
+      messageRules: [
+        v => !!v || 'This Field is required.'
+      ],
+
+      loading: false
 
     }
 },
@@ -383,6 +389,20 @@ data()  {
       } else {
         if(!this.view.topOfPage) this.view.topOfPage = true
       }
+    },
+
+    submitForm() {
+      this.loading = true;
+
+      emailjs.sendForm('service_3pik8yv', 'template_bma6y7t', this.$refs.form, 'user_d4P7rFWRsX2QI7lwaCNcR')
+          .then((result) => {
+            console.log('SUCCESS!', result.text);
+            this.loading = false;
+          }, (error) => {
+            console.log('FAILED...', error.text);
+            this.loading = false;
+          });
+
     }
   },
 };
@@ -504,18 +524,6 @@ html {
           #f10381);
 }
 
-
-//.navigation-text {
-//  color: #fff !important;
-//  background-color: purple !important;
-//}
-//
-//.navigation-text:hover {
-//  color: #fff !important;
-//  background: #001219 !important;
-//  //background-color: #001219 !important;
-//}
-
 .talk--btn {
 background-color: #BDE0FE !important;
   transition: 1s !important;
@@ -528,15 +536,8 @@ background-color: #BDE0FE !important;
   transition: 1s !important;
 }
 
-//.bg--personal {
-//  background: linear-gradient(-90deg, #b2fefa, #0de2f7 ) !important;
-//  animation: gradient 15s ease infinite !important;
-//}
-
 .bg--personal{
   position: relative !important;
-  //top: calc(50% - 175px) !important;
-  //left: calc(50% - 125px) !important;
   background: rgb(0, 11, 14, .50) !important;
   border-radius: 2px !important;
   overflow: hidden !important;
@@ -546,26 +547,10 @@ background-color: #BDE0FE !important;
 
 }
 
-//.bg--personal:after{
-//  content: '' !important;
-//  //background: inherit !important;
-//  position: absolute !important;
-//  left: -25px !important;
-//  //left position
-//  right: 0 !important;
-//  top: -25px !important;
-//  //top position
-//  bottom: 0 !important;
-//  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05) !important;
-//  filter: blur(20px) !important;
-//}
 
 // skills
 .box{
-  //width: 800px;
   padding: 40px 0;
-  //background:#f3f3f3;
-  //box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.1);
 }
 
 ul li{
@@ -584,7 +569,7 @@ ul li{
   width: 100%;
   background:#dfdfdf;
   overflow: hidden;
-  padding:2px;
+  padding:1px;
 }
 
 .progress{
@@ -654,6 +639,56 @@ ul li{
 .footer {
   background-image: linear-gradient(to bottom right, darken(powderblue, 20%), powderblue);
 }
+// contact Form
+
+.form{
+  width: 100%;
+  //background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+}
+.form h1{
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.form form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.flex-rev {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.flex-rev input, .flex-rev textarea {
+  border: none;
+  background-color: #e6e6e6;
+  padding: 12px 10px;
+  font-size: 16px;
+  resize: none;
+  margin-top: 7px;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  color: #243342;
+  outline-color: #243342;
+  outline-width: thin;
+  -webkit-appearance: none;
+}
+.flex-rev textarea{
+  height: 150px;
+}
+
+
+
+
 </style>
 
 <!--https://codepen.io/ovoblur/pen/BazBpXN-->
