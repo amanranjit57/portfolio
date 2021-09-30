@@ -270,7 +270,7 @@
         <v-row no-gutters class="my-5">
           <v-col cols="8" >
             <div class="form">
-              <form ref="form" @submit.prevent="submitForm()">
+              <form name="contactForm" ref="form" @submit.prevent="submitForm()">
                 <div class="flex-rev">
                   <input type="text" placeholder="Enter Full Name" name="name" id="name" />
                 </div>
@@ -281,7 +281,7 @@
                 <div class="flex-rev">
                   <textarea placeholder="I have an idea for a project...." name="message" id="message" />
                 </div>
-                <input type="submit" value="Submit">
+                  <button style="background-color: #3b2dd7; color: white; padding:10px 20px; border-radius: 8px" type="submit">Submit</button>
               </form>
             </div>
             <v-row no-gutters>
@@ -395,8 +395,9 @@ data()  {
       this.loading = true;
 
       emailjs.sendForm('service_3pik8yv', 'template_bma6y7t', this.$refs.form, 'user_d4P7rFWRsX2QI7lwaCNcR')
-          .then((result) => {
-            console.log('SUCCESS!', result.text);
+          .then(() => {
+            // console.log('Successfully message send!', result.text);
+            console.log('Successfully message send!');
             this.loading = false;
           }, (error) => {
             console.log('FAILED...', error.text);
