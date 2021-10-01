@@ -285,7 +285,8 @@
                 <div class="flex-rev">
                   <textarea cols="2" placeholder="I have an idea for a project...." name="message" id="message" />
                 </div>
-                  <button style="background-color: #3b2dd7; color: white; padding:10px 20px; border-radius: 8px" type="submit">Submit</button>
+                <v-btn :loading="loading" color="primary" type="submit">Submit</v-btn>
+<!--                  <button style="background-color: #3b2dd7; color: white; padding:10px 20px; border-radius: 8px" type="submit">Submit</button>-->
               </form>
             </div>
             <v-row no-gutters>
@@ -315,6 +316,25 @@
         Designed By <a style="text-decoration: none" href="https://amanranjit.com.np/">Aman Ranjit</a>, Developed by <a style="text-decoration: none" href="https://umesthapa.com.np/">Umesh Thapa</a>
       </v-col>
     </v-row>
+
+    <v-snackbar
+        v-model="snackbar"
+        :timeout="timeout"
+        top right
+        color="green"
+    >
+      {{ text }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+            text
+            v-bind="attrs"
+            @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
 <!--  End Footer  -->
   </v-app>
 </template>
@@ -330,6 +350,11 @@ export default {
 
 data()  {
     return {
+      snackbar: false,
+      text: 'Send Successfully!',
+      timeout: 2000,
+
+
       view: {topOfPage: true},
 
       slider: [
@@ -405,6 +430,7 @@ data()  {
           .then(() => {
             // console.log('Successfully message send!', result.text);
             console.log('Successfully message send!');
+            this.snackbar = true;
             this.loading = false;
           }, (error) => {
             console.log('FAILED...', error.text);
