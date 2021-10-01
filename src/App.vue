@@ -1,4 +1,5 @@
 <template>
+  <div>
   <v-app style="scroll-behavior: smooth !important;">
 <!--  Top Navigation Bar  -->
     <v-app-bar
@@ -337,6 +338,7 @@
     </v-snackbar>
 <!--  End Footer  -->
   </v-app>
+  </div>
 </template>
 
 <script>
@@ -412,9 +414,12 @@ data()  {
     window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
+    // Toggle Dark theme
     toggleTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
+
+    // Top navigation bar color set unset condition
     handleScroll(){
       if(window.pageYOffset>0){
         if(this.view.topOfPage) this.view.topOfPage = false
@@ -423,6 +428,7 @@ data()  {
       }
     },
 
+    // Send email
     submitForm() {
       this.loading = true;
 
