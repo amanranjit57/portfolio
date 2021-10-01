@@ -40,7 +40,7 @@
     <v-main id="top" class="main px-14 pt-16 pb-16" style="scroll-behavior: smooth !important;">
 
 <!--   Landing View   -->
-      <v-row no-gutters class="my-15 pt-5">
+      <v-row no-gutters class="my-15">
 <!--        <span class="gradient radial-gradient-default" style="top: 100px; position: marker;"></span>-->
         <v-col cols="6" style="margin-top: 30px;">
           <div class="white--text" style="font-size: 40px;">HI, I'm <span class="px-3" style="font-size: 70px; font-weight: 700;">AMAN RANJIT</span></div>
