@@ -42,7 +42,7 @@
 <!--   Landing View   -->
       <v-row no-gutters class="my-15 pt-5">
 <!--        <span class="gradient radial-gradient-default" style="top: 100px; position: marker;"></span>-->
-        <v-col cols="6" style="margin-top: 100px;">
+        <v-col cols="6" style="margin-top: 30px;">
           <div class="white--text" style="font-size: 40px;">HI, I'm <span class="px-3" style="font-size: 70px; font-weight: 700;">AMAN RANJIT</span></div>
           <v-row no-gutters>
             <v-col cols="12" class="justify-center white--text py-10">
