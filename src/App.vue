@@ -44,7 +44,7 @@
       <v-row no-gutters class="my-15">
 <!--        <span class="gradient radial-gradient-default" style="top: 100px; position: marker;"></span>-->
         <v-col cols="6" style="margin-top: 30px;">
-          <div class="white--text" style="font-size: 40px;">HI, I'm <span class="px-3" style="font-size: 70px; font-weight: 700;">AMAN RANJIT</span></div>
+          <div class="white--text" style="font-size: 40px;">👋 HI, I'm <span class="px-3" style="font-size: 70px; font-weight: 700;">AMAN RANJIT</span></div>
           <v-row no-gutters>
             <v-col cols="12" class="justify-center white--text py-10">
               <div class="justify-md-center font-weight-regular" style="font-size: 25px; text-align: justify !important; text-justify: inter-word !important;">Full time UI/UX Designer with wide variation in design technique. Young and energetic, ready to learn and hunger for design. I’m an intermediate designer with on field experience of 1.5 years and counting, versatile in UI/ UX along with some graphics design knowledge.</div>
