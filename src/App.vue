@@ -199,7 +199,7 @@
                   class="white--text font-weight-bold"
                   style="font-size: 55px"
                 >
-                  03
+                  04
                 </div>
                 <div class="white--text" style="font-size: 20px">Projects</div>
               </v-col>
@@ -212,7 +212,7 @@
                   class="white--text font-weight-bold"
                   style="font-size: 55px"
                 >
-                  1.5
+                  02
                 </div>
                 <div class="white--text" style="font-size: 20px">Companies</div>
               </v-col>
