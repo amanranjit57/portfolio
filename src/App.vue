@@ -726,7 +726,7 @@ html {
 
 .main {
   background: linear-gradient(
-    -60deg,
+    -90deg,
     #ff75c3,
     #ffa647,
     #70e2ff,
